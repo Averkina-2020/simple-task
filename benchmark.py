@@ -1,6 +1,7 @@
 from functools import wraps
 from time import time
 
+
 def timing(f):
     @wraps(f)
     def wrap(*args, **kw):
@@ -8,6 +9,6 @@ def timing(f):
         result = f(*args, **kw)
         te = time()
         delta = round(te - ts, 2)
-        print(f"function {f.__name__} took {delta} sec")        
+        print(f"function {f.__name__} took {delta} sec")
         return result
     return wrap
